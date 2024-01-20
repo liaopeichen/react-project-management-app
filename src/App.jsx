@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import NewProject from "./components/NewProject";
 import NoProjectSelected from "./components/NoProjectSelected";
 import ProjectsSideBar from "./components/ProjectsSideBar";
@@ -18,12 +19,28 @@ function App() {
     });
   }
 
+  function handleAddProject(projectData) {
+    const newProject = {
+      ...projectData,
+      id: uuidv4(),
+    };
+
+    setProjectsState((prevState) => {
+      return {
+        ...prevState,
+        projects: [...prevState.projects, newProject],
+      };
+    });
+  }
+
+  console.log(projectsState);
+
   let content;
 
   if (projectsState.selectedProjectId === undefined) {
     content = <NoProjectSelected onStartAddProject={handleStartAddProject} />;
   } else if (projectsState.selectedProjectId === null) {
-    content = <NewProject />;
+    content = <NewProject onAddProject={handleAddProject} />;
   }
 
   return (
