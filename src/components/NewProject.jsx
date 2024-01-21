@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import Input from "./Input";
 import Modal from "./Modal";
+import Heading2 from "./Heading2";
+import Paragraph from "./Paragraph";
 
 export default function NewProject({ onAddProject, onCancelAddProject }) {
   const modalRef = useRef();
@@ -32,14 +34,13 @@ export default function NewProject({ onAddProject, onCancelAddProject }) {
   return (
     <>
       <Modal ref={modalRef} buttonCaption="Close">
-        <h2 className="text-xl font-bold text-stone-700 my-4">Invalid Input</h2>
-        <p className="text-stone-600 mb-4">
-          {" "}
+        <Heading2 textColor="text-stone-700">Invalid Input</Heading2>
+        <Paragraph textColor="text-stone-600">
           Oops ... looks like you forgot to enter a value.
-        </p>
-        <p className="text-stone-600 mb-4">
+        </Paragraph>
+        <Paragraph textColor="text-stone-600">
           Please make sure you provided a valid value for every input field.
-        </p>
+        </Paragraph>
       </Modal>
       <div className="w-[35rem] mt-16">
         <menu className="flex items-center justify-end gap-4 my-4">
