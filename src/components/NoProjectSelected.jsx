@@ -1,7 +1,8 @@
 import noProjectImage from "../assets/no-projects.png";
-import Button from "./Button";
-import Heading2 from "./Heading2";
-import Paragraph from "./Paragraph";
+
+import Button from "./Button.jsx";
+import Heading2 from "./Heading2.jsx";
+import Paragraph from "./Paragraph.jsx";
 
 export default function NoProjectSelected({ onStartAddProject }) {
   return (

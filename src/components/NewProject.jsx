@@ -1,8 +1,9 @@
 import { useRef } from "react";
-import Input from "./Input";
-import Modal from "./Modal";
-import Heading2 from "./Heading2";
-import Paragraph from "./Paragraph";
+
+import Input from "./Input.jsx";
+import Modal from "./Modal.jsx";
+import Heading2 from "./Heading2.jsx";
+import Paragraph from "./Paragraph.jsx";
 
 export default function NewProject({ onAddProject, onCancelAddProject }) {
   const modalRef = useRef();
